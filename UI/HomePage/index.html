@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>QAirline</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <!-- Home section -->
+        <section class="home">
+            <div class="home-box">
+                <nav>
+                    <div class="logo bar">
+                        <div class="bar">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <h3>QAirline</h3>
+                    </div>
+                    <div class="menu">
+                        <div class="close">
+                            <i class="fa fa-close"></i>
+                        </div>
+                        <ul>
+                            <li><a href="#">Chức năng</a></li>
+                            <li><a href="#">Chức năng</a></li>
+                            <li><a href="#">Chức năng</a></li>
+                            <li><a href="#">Chức năng</a></li>
+                            <li><a href="#">Chức năng</a></li>
+                        </ul>
+                    </div>
+                    <div class="signup-login">
+                        <a href="#">Đăng ký</a>
+                        <a href="#">Đăng nhập</a>
+                    </div>
+                </nav>
+                
+                <div class="content">
+                    <h1>Viết slogan ở đây này</h1>
+                    <p>Một dòng gì đấy ở đây này</p>
+    
+                    <div class="search">
+                        <div class="top-part">
+                            <div>Tìm vé nhanh</div>
+                        </div>
+                        <div class="bottom-part">
+                            <div>
+                                <label for="from-location">Điểm đi</label>
+                                <i class="fa-solid fa-sort"></i>
+                            </div>
+                            <div>
+                                <label for="to-location">Điểm đến</label>
+                                <i class="fa-solid fa-sort"></i>
+                            </div>
+                            <div>
+                                <label for="start-date">Ngày đi</label>
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <label for="return-date">Ngày về</label>
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden search section -->
+        <section class="hidden-search">
+            <div class="popup-box">
+                <div class="search-box">
+                    <div class="top-part">
+                        <p>Tìm vé nhanh</p>
+                    </div>
+
+                    <div class="ticket-type">
+                        <label class="custom-label" id="one-way" for="one-way">Một chiều</label>
+                        <label class="custom-label" id="round-trip" for="round-trip">Khứ hồi</label>
+                    </div>
+
+                    <div class="information">
+                        <div>
+                            <div class="pre-face">
+                                <label for="from-location" id="from-location-label">Điểm đi</label>
+                                <i class="fa-solid fa-sort"></i>
+                            </div>
+                            <ul class="dropdown-container" id="from-location-list">
+                                <li>Thành phố 1</li>
+                                <li>Thành phố 2</li>
+                                <li>Thành phố 3</li>
+                                <li>Thành phố 4</li>
+                                <li>Thành phố 1</li>
+                                <li>Thành phố 2</li>
+                                <li>Thành phố 3</li>
+                                <li>Thành phố 4</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="pre-face">
+                                <label for="to-location" id="to-location-label">Điểm đến</label>
+                                <i class="fa-solid fa-sort"></i>
+                            </div>
+                            <ul class="dropdown-container" id="to-location-list">
+                                <li>Thành phố 1</li>
+                                <li>Thành phố 2</li>
+                                <li>Thành phố 3</li>
+                                <li>Thành phố 4</li>
+                                <li>Thành phố 1</li>
+                                <li>Thành phố 2</li>
+                                <li>Thành phố 3</li>
+                                <li>Thành phố 4</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="pre-face-time">
+                                <label for="start-date">Ngày đi</label>
+                                <input type="date">
+                                <!-- <i class="fa-solid fa-calendar-days"></i> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pre-face-time">
+                                <label for="return-date">Ngày về</label>
+                                <input type="date">
+                                <!-- <i class="fa-solid fa-calendar-days"></i>                                 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="number-customer">
+                        <div class="pre-face">
+                            <label for="to-location" id="passenger-count">1 Hành Khách</label>
+                            <i class="fa-solid fa-plus" id="increment"></i>
+                            <i class="fa-solid fa-minus" id="decrement"></i>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button class="button">Tìm chuyến bay</button>
+                    </div>
+                    <div class="text">
+                        <p>Chấp nhận các hình thức thanh toán</p>
+                    </div>
+                    <div class="payment-methods">
+                        <div class="payment-item">
+                            <img src="visa.png" alt="Payment Method 1">
+                        </div>
+                        <div class="payment-item">
+                            <img src="paypal.png" alt="Payment Method 2">
+                        </div>
+                        <div class="payment-item">
+                            <img src="card.png" alt="Payment Method 3">
+                        </div>
+                        <div class="payment-item">
+                            <img src="vnpay.png" alt="Payment Method 4">
+                        </div>
+                        <div class="payment-item">
+                            <img src="napas.png" alt="Payment Method 5">
+                        </div>
+                        <div class="payment-item">
+                            <img src="momo.png" alt="Payment Method 5">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </section>
+
+
+        <!-- destinatons section  -->
+        <section class="destinations">
+            <h4 class="label">Những điểm đến nổi bật</h4>
+            <div class="container">
+                <div class="container-box">
+                    <h2 class="heading">Thoát thành phố, tới thiên nhiên</h2>
+                    <div class="content">
+                        <p>Hãy rời xa nhịp sống hối hả của thành phố và hòa mình vào thiên nhiên tươi đẹp! Cùng hãng bay của chúng tôi khám phá những điểm đến tuyệt vời, từ những bãi biển hoang sơ, núi non hùng vĩ đến những cánh rừng xanh mướt, mang lại cho bạn sự bình yên và những trải nghiệm khó quên.</p>
+                        <a href="#">Tìm hiểu thêm<i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="box box1">
+                        <img src="hanoi.jpg" alt="">
+                        <div class="text">
+                            <h2>Thành phố Hà Nội</h2>
+                        </div>
+                    </div>
+                    <div class="box box2">
+                        <img src="hochiminh.jpg" alt="">
+                        <div class="text">
+                            <h2>Thành phố Hồ Chí Minh</h2>
+                        </div>
+                    </div>
+                    <div class="box box3">
+                        <img src="nhatrang.jpg" alt="">
+                        <div class="text">
+                            <h2>Nha Trang</h2>
+                        </div>
+                    </div>
+                    <div class="box box4">
+                        <img src="danang.jpg" alt="">
+                        <div class="text">
+                            <h2>Đà Nẵng</h2>
+                        </div>
+                    </div>
+                    <div class="box box5">
+                        <img src="hue.jpg" alt="">
+                        <div class="text">
+                            <h2>Huế</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- featured section  -->
+        <section class="featured">
+            <div class="gallery">
+                <div class="box box1">
+                    <div class="first-box">
+                        <h4 class="label">Ưu đãi lớn</h4>
+                        <h2 class="heading">Bay thả ga không lo về giá</h2>
+                        <p>
+                            Đặt phòng khách sạn ngay hôm nay để nhận ngay những ưu đãi hấp dẫn! Tận hưởng giá tốt nhất, cùng nhiều tiện ích đi kèm, giúp chuyến đi của bạn trở nên trọn vẹn và tiết kiệm hơn bao giờ hết.
+                        </p>
+                        <a href="#">Hiển thị thêm</a>
+                        <div class="image">
+                            <img src="plane.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="box box2">
+                    <img src="capella.jpg" alt="">
+                    <div class="content">
+                        <h2>Cappella Hanoi</h2>
+                        <p>Hoàn Kiếm, Hà Nội</p>
+                        <div class="review-and-idr">
+                            <div class="review"><i class="fa fa-star"></i> 4.9 | 853 review</div>
+                            <p>Giá: 5.000.000VND</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box3">
+                    <img src="Elite of the Seas 5.jpg" alt="">
+                    <div class="content">
+                        <h2>Elite of the Seas</h2>
+                        <p>Halong Bay</p>
+                        <div class="review-and-idr">
+                            <div class="review"><i class="fa fa-star"></i> 4.9 | 853 review</div>
+                            <p>Giá: 5.000.000VND</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box4">
+                    <img src="lsignature.jpg" alt="">
+                    <div class="content">
+                        <h2>L'Signature Hotel & Spa</h2>
+                        <p>Hoàn Kiếm, Hà Nội</p>
+                        <div class="review-and-idr">
+                            <div class="review"><i class="fa fa-star"></i> 4.9 | 853 review</div>
+                            <p>Giá: 5.000.000VND</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- feedback -->
+        <section class="feedback">
+            <div class="container">
+                <h2 class="heading">Đánh giá từ khách hàng</h2>
+                <p class="paragraph">
+                    real stories from our sdenturours community
+                </p>
+            </div>
+
+            <div class="voices">
+                <div class="voice box1">
+                    <div class="profile">
+                        <img src="photo1.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+                <div class="voice box2">
+                    <div class="profile">
+                        <img src="photo2.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+                <div class="voice box3">
+                    <div class="profile">
+                        <img src="photo3.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+                <div class="voice box4">
+                    <div class="profile">
+                        <img src="photo4.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+                <div class="voice box5">
+                    <div class="profile">
+                        <img src="photo5.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+                <div class="voice box6">
+                    <div class="profile">
+                        <img src="photo6.jpg" alt="">
+                        <div class="detail">
+                            <li>marvin davin</li>
+                            <li>traveler</li>
+                        </div>
+                    </div>
+                    <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat repellat iusto sunt, ducimus aliquam laboriosam placeat eligendi, dignissimos facere ratione deserunt. Voluptatum ratione saepe dolor!"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <section class="footer">
+                <div class="container">
+                    <div class="detail">
+                        <h3>QAirline</h3>
+                        <p>QAirline tự hào là Hãng hàng không quốc tế 4 sao. Xin trân trọng cảm ơn sự đồng hành của Quý khách và bạn hàng!</p>
+                        <h5>Email: <a href="mailto:minimum.195422@example.com">minimum.195422@mail.com</a></h5>
+                        <div class="social">
+                            <a href="#" class="fa-brands fa-linkedin" style="color: #ffffff;"></a>
+                            <a href="#" class="fa-brands fa-facebook" style="color: #ffffff;"></a>
+                            <a href="#" class="fa-brands fa-square-twitter"></a>
+                        </div>
+                    </div>
+                    <div class="about-us">
+                        <h4>QAirline</h4>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">Tuyển dụng <span>tại đây!</span></a></li>
+                        <li><a href="#">Đối tác</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </div>
+                    <div class="about-us">
+                        <h4>Trợ giúp</h4>
+                        <li><a href="#">Góp ý dịch vụ</a></li>
+                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                        <li><a href="#">Liên hệ với chi nhánh QAirline</a></li>
+                        <li><a href="#">Chính sách bảo vệ khách hàng</a></li>
+                    </div>
+                    <div class="about-us">
+                        <h4>Thông tin</h4>
+                        <li><a href="#">Tạp chí Heritage</a></li>
+                        <li><a href="#">Cẩm nang du lịch</a></li>
+                        <li><a href="#">Quảng cáo với QAirline</a></li>
+                    </div>
+                </div>
+    
+                <div class="copyright">
+                    <div>
+                        &copy;2024 - QAirline, inc, all rights reserved
+                    </div>
+                    <div>
+                        <a href="#">Điều khoản và điều kiện</a>
+                        <a href="#">Chính sách bảo mật</a>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+        <script src="script.js"></script>
+    </body>
+</html>

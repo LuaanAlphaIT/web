@@ -195,11 +195,11 @@ animateContent([".home .content h1, .home .content p, .home .content .search"]);
 
 scrollTirggerAnimation(".feedback .container", [".feedback .label", ".feedback .heading", ".feedback .paragraph"]);
 
-// scrollTirggerAnimation(".article", [".article .label", ".article .heading"]);
+scrollTirggerAnimation(".article", [".article .label", ".article .heading"]);
 
 swipeAnimation(".destinations", [".destinations .heading", ".destinations .content"])
 
-// swipeAnimation(".article", [".article .latest-article", ".article .box1", ".article .box2", ".article .box3", ".article .box4"])
+swipeAnimation(".article", [".article .latest-article", ".article .box1", ".article .box2", ".article .box3", ".article .box4"])
 
 galleryAnimation(".destinations .gallery", [".destinations .gallery .box1",".destinations .gallery .box2",".destinations .gallery .box3",".destinations .gallery .box4",".destinations .gallery .box5"])
 

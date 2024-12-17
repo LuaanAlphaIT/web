@@ -21,17 +21,53 @@ close.addEventListener("click", () => {
 });
 
 // blur
-const search = document.querySelector(".search"), 
+
+const search = document.querySelector(".search"),
+loginBtn = document.querySelector(".loginbtn"),
 searchBottomPart = document.querySelector(".bottom-part"),
 hiddenSearchSection = document.querySelector(".hidden-search"),
-homeSection = document.querySelector(".home");
+formSection = document.querySelector(".form"),
+homeSection = document.querySelector(".home"),
+destinationSection = document.querySelector(".destinations"),
+featuredSection = document.querySelector(".featured"),
+feedbackSection = document.querySelector(".feedback"),
+articleSection = document.querySelector(".article"),
+footerSection = document.querySelector(".footer");
 
+loginBtn.addEventListener("click", () => {
+    formSection.classList.add("active");
+    homeSection.classList.add("wrapp-blur");
+    destinationSection.classList.add("wrapp-blur");
+    featuredSection.classList.add("wrapp-blur");
+    feedbackSection.classList.add("wrapp-blur");
+    articleSection.classList.add("wrapp-blur");
+    footerSection.classList.add("wrapp-blur");
+});
 
+  
 searchBottomPart.addEventListener("click", () => {
   search.classList.add("inactive");
   hiddenSearchSection.classList.add("active");
   homeSection.classList.add("wrapp-blur");
+  destinationSection.classList.add("wrapp-blur");
+  featuredSection.classList.add("wrapp-blur");
+  feedbackSection.classList.add("wrapp-blur");
+  articleSection.classList.add("wrapp-blur");
+  footerSection.classList.add("wrapp-blur");
 });
+
+formSection.addEventListener("click", function(event) {
+    const clickEvent = event.target;
+    if (!clickEvent.closest(".search-box")) {
+      formSection.classList.remove("active");
+      homeSection.classList.remove("wrapp-blur");
+      destinationSection.classList.remove("wrapp-blur");
+      featuredSection.classList.remove("wrapp-blur");
+      feedbackSection.classList.remove("wrapp-blur");
+      articleSection.classList.remove("wrapp-blur");
+      footerSection.classList.remove("wrapp-blur");
+    }
+  });
 
 hiddenSearchSection.addEventListener("click", function(event) {
   const clickEvent = event.target;
@@ -39,6 +75,11 @@ hiddenSearchSection.addEventListener("click", function(event) {
     search.classList.remove("inactive");
     hiddenSearchSection.classList.remove("active");
     homeSection.classList.remove("wrapp-blur");
+    destinationSection.classList.remove("wrapp-blur");
+    featuredSection.classList.remove("wrapp-blur");
+    feedbackSection.classList.remove("wrapp-blur");
+    articleSection.classList.remove("wrapp-blur");
+    footerSection.classList.remove("wrapp-blur");
   }
 });
 
@@ -97,7 +138,6 @@ toLocationList.querySelectorAll('li').forEach(item => {
 
 
 // number customer
-// Lấy các phần tử cần thao tác
 const incrementButton = document.getElementById("increment");
 const decrementButton = document.getElementById("decrement");
 const passengerLabel = document.getElementById("passenger-count");

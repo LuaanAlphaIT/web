@@ -54,6 +54,7 @@ section.home {
     padding: 1rem;
     width: 100%;
     height: 100vh;
+    z-index: 1;
 }
 
 .home .home-box {
@@ -128,23 +129,23 @@ section.home {
     gap: .5rem;
 }
 
-.home .home-box nav .signup-login a {
+.home .home-box nav .signup-login div {
     color: var(--white-color);
     padding: .3rem 1rem;
     border-radius: 2rem;
 }
 
-.home .home-box nav .signup-login a:last-child {
+.home .home-box nav .signup-login div:last-child {
     background: var(--green-color);
     padding: .3rem 1rem;
     border-radius: 2rem;
 }
 
-.home .home-box nav .signup-login a:hover {
+.home .home-box nav .signup-login div:hover {
     color: rgb(255 255 255/70%);
 }
 
-.home .home-box nav .signup-login a:last-child:hover {
+.home .home-box nav .signup-login div:last-child:hover {
     color: var(--white-color);
     background: #02636e;
 }
@@ -255,18 +256,103 @@ section.home {
     display: none;
 }
 
-.home.wrapp-blur {
+.wrapp-blur {
     filter: blur(4px);
     transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* Login form */
+section.form {
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    padding: 1rem;
+}
+
+section.form.active {
+    display: block;
+}
+
+.form .login-form { 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    margin-top: 70px;
+    height: 250px;
+    width: 400px;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    padding: 20px 10px;
+    gap: 20px;
+    transform: translateX(-1rem);
+}
+
+.form .login-form p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.form .login-form label {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid var(--black-color);
+    padding: 0 5px;
+}
+
+.form .login-form .login-name input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+}
+
+.form .login-form .password input {
+    width: 95%;
+    background-color: transparent;
+    border: 0;
+}
+
+.form .login-form a {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form .login-form div {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #e7b541;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    &:hover {
+      background-color: transparent;
+      color: var(--black-color);
+      border: 2px solid #e7b541;
+      transition: all .1s ease-in-out;
+    }
 }
 
 
 /* Hidden search section */
 section.hidden-search {
     display: none;
-    position: relative;
-    top: -100vh;
-    height: 300vh !important;
+    position: absolute;
+    top: 0;
+    height: 100vh !important;
 }
 
 section.hidden-search.active {

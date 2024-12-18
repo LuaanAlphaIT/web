@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+
+:root {
+    --dark-green: #112a34;
+    --green-color: #004047;
+    --white-color: #fff;
+    --cream-color: #faf8f2;
+    --black-color: #010101;
+    --dark-blue: #1f819c;
+}
+
+::selection {
+    background: var(--green-color);
+    color: var(--white-color);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 90%;
+}
+
+section {
+    padding: 0 8rem;
+    width: 100%;
+}
+
+.label {
+    font-size: 1.1rem;
+    color:  #666;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+section.home {
+    padding: 1rem;
+    width: 100%;
+    height: 70vh;
+    z-index: 1;
+}
+
+.home .home-box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("home-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.home .home-box nav {
+    width: 100%;
+    height: 65px;
+    background: linear-gradient(rgb(255,255,255,.2),rgb(255,255,255,.2));
+    backdrop-filter: blur(1px);
+    border-radius: .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    z-index: 10;
+    position: relative;
+}
+
+.home .home-box nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home .home-box nav .logo .bar {
+    font-size: 1.35rem;
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+
+.home .home-box nav .logo .bar:hover {
+    color: var(--green-color);
+}
+
+.home .home-box nav .logo h3 {
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+.home .home-box nav .menu .close {
+    display: none;
+}
+
+.home .home-box nav .menu ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.home .home-box nav .menu ul li a {
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+.home .home-box nav .menu ul li a:hover {
+    color: rgb(255 255 255/70%);
+}
+
+.home .home-box nav .signup-login {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.home .home-box nav .signup-login div {
+    color: var(--white-color);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+}
+
+.home .home-box nav .signup-login div:last-child {
+    background: var(--green-color);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+}
+
+.home .home-box nav .signup-login div:hover {
+    color: rgb(255 255 255/70%);
+}
+
+.home .home-box nav .signup-login div:last-child:hover {
+    color: var(--white-color);
+    background: #02636e;
+}
+
+.home .home-box .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(0, -65px);
+}
+
+.home .home-box .content h1 {
+    font-size: 4rem;
+    max-width: 60rem;
+    color: var(--white-color);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: "Open Sans", serif;
+}
+
+.wrapp-blur {
+    filter: blur(4px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* Login form */
+section.form {
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    padding: 1rem;
+}
+
+section.form.active {
+    display: block;
+}
+
+.form .login-form { 
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    margin-top: 70px;
+    height: 250px;
+    width: 400px;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    padding: 20px 10px;
+    gap: 20px;
+    transform: translateX(-1rem);
+}
+
+.form .login-form p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.form .login-form label {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid var(--black-color);
+    padding: 0 5px;
+}
+
+.form .login-form .login-name input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+}
+
+.form .login-form .password input {
+    width: 95%;
+    background-color: transparent;
+    border: 0;
+}
+
+.form .login-form a {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.form .login-form div {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #e7b541;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    &:hover {
+      background-color: transparent;
+      color: var(--black-color);
+      border: 2px solid #e7b541;
+      transition: all .1s ease-in-out;
+    }
+}
+
+/* Register */
+section.register {
+    width: 100%;
+    height: 105vh;
+    padding: 1vh;
+    justify-items: center;
+}
+
+.register .register-box {
+    width: 80%;
+    height: 100%;
+    background-color: var(--cream-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-size: cover;
+}
+
+.register .register-box .personal-information {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid var(--black-color);
+    padding: 10px;
+    border-radius: .4rem;
+}
+
+.register .register-box .personal-information .part-title {
+    box-sizing: border-box;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--dark-blue);
+    width: calc(30%-10px);
+}
+
+.register .register-box .personal-information .get-information {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+}
+
+.register .register-box .personal-information .get-information .part-require {
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+}
+
+.register .register-box .personal-information .get-information .part-require p {
+    font-family: "Open Sans", serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 40%;
+    padding-left: 70px;
+}
+
+.register .register-box .personal-information .get-information .part-require input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+.register .register-box .personal-information .get-information .part-require input[type="date"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+
+.register .register-box .personal-information .get-information .part-require select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+.register .register-box .personal-information .get-information .part-require input[type="text"]:focus,
+.register .register-box .personal-information .get-information .part-require input[type="date"]:focus,
+.register .register-box .personal-information .get-information .part-require select:focus {
+    outline: none;
+    border: 0.2px solid var(--dark-blue);
+    box-shadow: var(--dark-blue) 0px 0px 4px;
+}
+
+.register .register-box .contact-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid var(--black-color);
+    padding: 10px;
+    border-radius: .4rem;
+}
+
+.register .register-box .contact-information .part-title {
+    box-sizing: border-box;
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--dark-blue);
+    width: calc(30%-10px);
+}
+
+.register .register-box .contact-information .get-information {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 10px;
+}
+
+.register .register-box .contact-information .get-information .part-require {
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+}
+
+.register .register-box .contact-information .get-information .part-require p {
+    font-family: "Open Sans", serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 40%;
+    padding-left: 95px;
+}
+
+.register .register-box .contact-information .get-information .part-require input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+.register .register-box .contact-information .get-information .part-require input[type="date"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+
+.register .register-box .contact-information .get-information .part-require select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    width: 60%;
+    padding-left: 10px;
+}
+
+.register .register-box .contact-information .get-information .part-require input[type="text"]:focus,
+.register .register-box .contact-information .get-information .part-require input[type="date"]:focus,
+.register .register-box .contact-information .get-information .part-require select:focus {
+    outline: none;
+    border: 0.2px solid var(--dark-blue);
+    box-shadow: var(--dark-blue) 0px 0px 4px;
+}
+
+.register .register-box .register-btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.register .register-box .register-btn .btn {
+    border: 3px solid var(--dark-blue);
+    border-radius: .4rem;
+    background-color: var(--white-color);
+    color: var(--dark-blue);
+    width: 150px;
+    height: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    &:hover {
+        background-color: var(--dark-blue);
+        color: var(--white-color);
+        border: 0;
+        transition: all .1s ease-in-out;
+    }
+}
+
+
+/* footer */
+footer {
+    padding: 1rem;
+    width: 100%;
+}
+
+footer .footer {
+    background: var(--dark-green);
+    border-radius: .7rem;
+    padding: 5rem 4rem 2rem 4rem;
+}
+
+footer .footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--green-color);
+    gap: 2rem;
+}
+
+footer .footer .container .detail {
+    max-width: 28rem;
+}
+
+footer .footer .container .detail h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--white-color);
+}
+
+footer .footer .container .detail p {
+    line-height: 1.6;
+    color: rgb(255 255 255/80%);
+    margin-bottom: 1.5rem;
+}
+
+footer .footer .container .detail h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+footer .footer .container .detail h5 a {
+    color: rgb(255 255 255/80%);
+    font-size: .9rem;
+    border-bottom: 2px solid #00cee4;
+    padding: 1px 0;
+    display: inline-block;
+}
+
+footer .footer .container .detail .social {
+    display: flex;
+    gap: .8rem;
+    margin-top: 1rem;
+}
+
+footer .footer .container .detail .social a {
+    border: none;
+    font-size: 1.3rem;
+    color: var(--white-color);
+}
+
+footer .footer .container h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    color: var(--white-color);
+}
+
+footer .footer .container li {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+footer .footer .container a {
+    color: rgb(255 255 255/80%);
+}
+
+footer .footer .container a:hover {
+    color: var(--white-color);
+}
+
+footer .footer .container span {
+    color: #000;
+    background: #00cee4;
+    font-size: .9rem;
+    padding: .1rem .5rem;
+    border-radius: .3rem;
+    font-weight: 500;
+}
+
+footer .footer .copyright {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: .9rem;
+    color: rgb(255 255 255/80%);
+    text-align: center;
+}
+
+footer .footer .copyright a {
+    color: rgb(255 255 255/80%);
+    margin-left: 1rem;
+    text-align: center;
+}
+
+
+
+
+/* Media */
+
+@media (max-width: 1279px) {
+    section.register {
+        height: 117vh;
+    }
+}
+
+@media (max-width: 1070px) {
+    section.register {
+        height: 125vh;
+    }
+}
+
+@media (max-width: 1020px) {
+    html {
+        font-size: 85%;
+    }
+
+    section {
+        padding: 0 2rem;
+    }
+
+    footer .footer {
+        padding: 2rem;
+    }
+
+    section.register {
+        height: 130vh;
+    }
+
+    .register .register-box {
+        gap: 10px;
+    }
+
+    .register .register-box .personal-information {
+        flex-direction: column;
+    }
+
+    .register .register-box .personal-information .part-title,
+    .register .register-box .personal-information .get-information,
+    .register .register-box .personal-information .part-require {
+        width: 100%;
+    }
+
+    .register .register-box .personal-information .get-information .part-require p {
+        padding-left: 0;
+        font-size: 16px;
+    }
+
+
+    .register .register-box .contact-information {
+        flex-direction: column;
+    }
+
+    .register .register-box .contact-information .part-title,
+    .register .register-box .contact-information .get-information,
+    .register .register-box .contact-information .part-require {
+        width: 100%;
+    }
+
+    .register .register-box .contact-information .get-information .part-require p {
+        padding-left: 0;
+        font-size: 16px;
+    }
+    
+}
+
+@media (max-width: 910px) {
+    .home .home-box nav {
+        padding: 0 1rem;
+    }
+
+    .home .home-box nav .menu ul {
+        gap: 2rem;
+    }
+
+    footer .footer .container {
+        flex-direction: column;
+    }
+
+    section.register {
+        height: 130vh;
+    }
+
+    .register .register-box .personal-information .part-title,
+    .register .register-box .contact-information .part-title {
+        font-size: 24px;
+    }
+
+    .register .register-box .personal-information .get-information .part-require p,
+    .register .register-box .contact-information .get-information .part-require p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home .home-box nav .menu {
+        display: none;
+    }
+    
+    .home .home-box nav .logo .bar {
+        display: block;
+    }
+
+    .home .home-box nav .menu.active {
+        display: block;
+        position: absolute;
+        left: -1.5rem;
+        top: -1.5rem;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(0 0 0/90%);
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+    }
+
+    .home .home-box nav .menu .close {
+        display: block;
+        position: absolute;
+        left: 3rem;
+        top: 3rem;
+        cursor: pointer;
+        color: var(--white-color);
+        font-size: 2rem;
+    }
+
+    .home .home-box nav .menu .close:hover {
+        color: rgb(255 255 255/40%);
+    }
+
+    .home .home-box nav .menu ul {
+        flex-direction: column;
+        font-size: 1.3rem;
+        gap: 1rem;
+    }
+
+    .home .home-box nav .menu ul:hover li a {
+        color: rgb(255 255 255/40%);
+    }
+
+    .home .home-box nav .menu ul li a:hover {
+        color: var(--white-color);
+    }
+
+    .home .home-box .content {
+        padding: 2rem;
+    }
+
+    section.register {
+        height: 130vh;
+    }
+}
+
+@media (max-width: 607px) {
+    .home .home-box .content h1 {
+        font-size: 2rem;
+    }
+
+    section.register {
+        height: 125vh;
+    }
+
+    .register .register-box .personal-information .part-title,
+    .register .register-box .contact-information .part-title {
+        font-size: 20px;
+    }
+    .register .register-box .personal-information .get-information .part-require p,
+    .register .register-box .contact-information .get-information .part-require p {
+        font-size: 12px;
+    }
+}

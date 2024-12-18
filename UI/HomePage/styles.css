@@ -135,6 +135,12 @@ section.home {
     border-radius: 2rem;
 }
 
+.home .home-box nav .signup-login a {
+    color: var(--white-color);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+}
+
 .home .home-box nav .signup-login div:last-child {
     background: var(--green-color);
     padding: .3rem 1rem;
@@ -187,7 +193,6 @@ section.home {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    opacity: 0.8;
 }
 
 .home .home-box .content .search.inactive {

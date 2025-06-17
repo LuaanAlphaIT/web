@@ -4,20 +4,28 @@ const {
     loginUser,
     editUser,
     deleteUser,
-    getUser
+    getCustomer,
+    getCustomerInfoByAdmin,
+    changePassword
 } = require('../controllers/userController');
 const authenticateToken = require('../middlewares/authenticateToken');
+const checkRole = require("../middlewares/checkRole");
 const router = express.Router();
 
 router.post('/register', registerUser);
 
 router.post('/login', loginUser);
 
-router.post('/edit', editUser);
+router.put('/edit', authenticateToken, editUser);
 
-router.post('/delete', deleteUser);
+router.put('/password', authenticateToken, changePassword);
 
-router.get('/get', authenticateToken, getUser);
+router.delete('/', authenticateToken, deleteUser);
+
+router.get('/', authenticateToken, getCustomer);
+
+router.get("/:id", authenticateToken, checkRole("admin"), getCustomerInfoByAdmin);
+
 
 /**
  * Xuất router user.

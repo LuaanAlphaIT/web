@@ -127,20 +127,106 @@ const aircraftDataEntry = async (req, res) => {
 };
 
 
-
 const editAircraftData = async (req, res) => {
+    try {
+        const { aircraftId, flight_number, updateData } = req.body;
 
-}
+        // Kiểm tra dữ liệu đầu vào
+        if (!aircraftId && !flight_number) {
+            return res.status(400).json({ message: "Vui lòng cung cấp ID hoặc số hiệu máy bay để chỉnh sửa." });
+        }
+
+        if (!updateData || Object.keys(updateData).length === 0) {
+            return res.status(400).json({ message: "Dữ liệu cần cập nhật không được để trống." });
+        }
+
+        // Tìm và cập nhật thông tin máy bay
+        const updatedAircraft = await Aircraft.findOneAndUpdate(
+            aircraftId ? { _id: aircraftId } : { flight_number },
+            { $set: updateData },
+            { new: true, runValidators: true } // Trả về tài liệu đã cập nhật và kiểm tra dữ liệu
+        );
+
+        if (!updatedAircraft) {
+            return res.status(404).json({ message: "Không tìm thấy máy bay cần chỉnh sửa." });
+        }
+
+        res.status(200).json({
+            message: "Thông tin máy bay đã được cập nhật thành công.",
+            data: updatedAircraft
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Đã xảy ra lỗi khi chỉnh sửa thông tin máy bay.",
+            error: err.message
+        });
+    }
+};
 
 
-const getAircraftData = async () => {
+const getAircraftData = async (req, res) => {
+    try {
+        const { flight_number } = req.query;
 
-}
+        if (flight_number) {
+            // Lấy thông tin chi tiết của một máy bay
+            const foundAircraft = await Aircraft.findOne({ flight_number });
+
+            if (!foundAircraft) {
+                return res.status(404).json({ message: "Không tìm thấy thông tin máy bay." });
+            }
+
+            return res.status(200).json({
+                message: "Thông tin máy bay.",
+                data: foundAircraft
+            });
+        }
+
+        // Lấy danh sách toàn bộ máy bay
+        const aircraftList = await Aircraft.find();
+
+        res.status(200).json({
+            message: "Danh sách máy bay.",
+            aircraft: aircraftList
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Đã xảy ra lỗi khi lấy thông tin máy bay.",
+            error: err.message
+        });
+    }
+};
 
 
-const deleteAircraftData = async () => {
+const deleteAircraftData = async (req, res) => {
+    try {
+        const { aircraft } = req.body;
 
-}
+        // Kiểm tra xem thông tin aircraft có được cung cấp không
+        if (!aircraft || (!aircraft.flight_number && !aircraft.aircraftId)) {
+            return res.status(400).json({ message: "Vui lòng cung cấp ID hoặc số hiệu máy bay trong đối tượng 'aircraft'." });
+        }
+
+        // Tìm và xóa máy bay theo ID hoặc flight_number
+        const deletedAircraft = await Aircraft.findOneAndDelete(
+            aircraft.aircraftId ? { _id: aircraft.aircraftId } : { flight_number: aircraft.flight_number }
+        );
+
+        if (!deletedAircraft) {
+            return res.status(404).json({ message: "Không tìm thấy máy bay cần xóa." });
+        }
+
+        res.status(200).json({
+            message: "Máy bay đã được xóa thành công.",
+            data: deletedAircraft
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Đã xảy ra lỗi khi xóa máy bay.",
+            error: err.message
+        });
+    }
+};
 
 module.exports = {
     aircraftDataEntry,

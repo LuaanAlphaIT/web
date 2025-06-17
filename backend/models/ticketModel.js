@@ -22,7 +22,6 @@ const ticketSchema = new mongoose.Schema({
         phone: { type: String, required: true },
         preferred_language: { type: String, required: true }
     },
-    price: { type: Number, required: true },
     purchased_at: { type: Date, default: Date.now }
 }, { timestamps: true });
 
